@@ -48,7 +48,7 @@ app.get('/api/data', (req, res) => {
     connection.query('SELECT * FROM aliment', (err, results) => {
       if (err) {
         console.error('Erreur lors de la récupération des données :', err);
-        res.status(500).json({ error: 'Erreur lors de la récupération des données' });
+        res.status(500).json({ error: `Erreur lors de la récupération des données : ${err.message} ` });
       } else {
         res.json(results);
       }
@@ -64,7 +64,7 @@ app.get('/api/data', (req, res) => {
     connection.query(`SELECT * FROM aliment WHERE nom LIKE ?`, [`%${nom}%`], (err, results) => {
       if (err) {
         console.error('Erreur lors de la récupération des données :', err);
-        res.status(500).json({ error: 'Erreur lors de la récupération des données' });
+        res.status(500).json({ error: `Erreur lors de la récupération des données : ${err.message} ` });
       } else {
         res.json(results);
       }
