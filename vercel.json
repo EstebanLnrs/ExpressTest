@@ -2,10 +2,10 @@
     "version": 2,
     "name": "express-test",
     "builds": [
-      { "src": "server.js", "use": "@vercel/node" }
+      { "src": "app.js", "use": "@vercel/node" }
     ],
     "routes": [
-      { "src": "/api/data", "dest": "/server.js" }, 
-      { "src": "/api/:nom", "dest": "/server.js" }
+      { "src": "/api/data", "dest": "/app.js" }, 
+      { "src": "/api/:nom", "dest": "/app.js" }
     ]
 }
